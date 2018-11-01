@@ -18,6 +18,9 @@ unsigned int factorial (int n){
 void insert(char *M,int pos,char in){
     char aux[33]="";
     char aux2[2]="a";
+
+
+
     for(int i=0;i<strlen(M);i++){
         if(i+1 == pos){
             aux2[0]=in;
@@ -28,8 +31,16 @@ void insert(char *M,int pos,char in){
         strcat(aux,aux2);
     }
 
+    
+
 
     strcpy(M,aux);
+
+    if(strlen(M)==0){
+    	aux2[0]=in;
+    	strcat(M,aux2);
+
+    }
         
 }
 
@@ -60,8 +71,12 @@ char *F (char *C,int k){
 		int j;
 		for( j=1;j<=i;j++){
 			alv += permsubi;
-			if(k<alv)
+			if(k<alv){
 				insert(M,j,C[i-1]);
+				break;
+				printf("i:%d, j:%d\n",i,j);
+				
+			}	
 		};
 
 		
@@ -78,7 +93,7 @@ char *F (char *C,int k){
 		perm /= i;
 
 	}
-	printf("%s\n",M );
+
 	return M;
 };
 
