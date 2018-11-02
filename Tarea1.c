@@ -21,7 +21,7 @@ void insert(char *M,int pos,char in){
 
 
 
-    for(int i=0;i<strlen(M);i++){
+    for(int i=0;i<=strlen(M);i++){
         if(i+1 == pos){
             aux2[0]=in;
             strcat(aux,aux2);
@@ -73,8 +73,8 @@ char *F (char *C,int k){
 			alv += permsubi;
 			if(k<alv){
 				insert(M,j,C[i-1]);
+
 				break;
-				printf("i:%d, j:%d\n",i,j);
 				
 			}	
 		};
