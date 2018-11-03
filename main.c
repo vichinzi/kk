@@ -7,13 +7,14 @@
 int main(int argc, char const *argv[]){ 
 
     int T,k;
-    scanf("%d", &T); // cantidad de consultas
+    T=argv[0]; // cantidad de consultas
     char *C = (char *)malloc(33*sizeof(char));
     char *M;
 
-    for(int i = 0; i < T ; i++){
-        scanf("%s", C);    //String a desencriptar
-        scanf("%d",&k);    //LLave, que contiene la permutacion que se busca
+    for(int i = 1; i < T ; i++){
+        C = argv[i];//String a desencriptar
+        i++;
+        k = argv[i];    //LLave, que contiene la permutacion que se busca
 
         if(strlen(C)>20){
             printf("Error: String ingresado no debe tener mas de 20 caracteres\n");
