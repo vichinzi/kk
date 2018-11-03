@@ -8,8 +8,8 @@ int main(int argc, char const *argv[]){
 
     int T,k;
     T=argv[0]; // cantidad de consultas
-    char *C = (char *)malloc(33*sizeof(char));
-    char *M;
+    char *C = (char *)malloc(32*sizeof(char));
+    char *M; // String a entregar al usuario
 
     for(int i = 1; i < T ; i++){
         C = argv[i];//String a desencriptar
