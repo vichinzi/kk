@@ -3,6 +3,11 @@
 #include <string.h>
 #include "funciones.h"
 
+
+
+
+
+
 unsigned long long int factorial (int n){
     if(n==1){
         return (1);
@@ -14,6 +19,22 @@ unsigned long long int factorial (int n){
 
     return (n * factorial(n-1));
 };
+
+/*******************************
+Nombre funcion: insert
+********************************
+Descripcion:Inserta caracter in, entre caracteres de un string,
+*si se necesita insertar al principio del string, la posicion
+*que debe recibir es 1
+********************************
+entrada:
+*  M: puntero a string
+*  pos: posicion con el espacio entre caracteres a insertar
+*  in: caracter a insertar
+******
+salida: vacio
+*******************************/
+
 
 void insert(char *M,int pos,char in){
     char aux[33]="";
@@ -37,6 +58,24 @@ void insert(char *M,int pos,char in){
     }        
 };
 
+/*******************************
+Nombre funcion getpos
+********************************
+Descripcion:Ocupando backtracking, avanza por ramas, para comprobar
+*si la permutacion que se busca pertenece a esta, sino se llama recursivamente
+*a la funcion para continuar buscando en la siguiente rama
+********************************
+entrada:
+*  pos: posicion donde se insertara, si se acepta esta rama
+*  permsubi: cantidad de permutaciones que no se han descartado
+*  k: permutacion que se busca
+*  alv: permutacion base
+******
+salida: pos, si esque esta es la subrama a la que pertenece la llave, se llama
+*a la funcion de nuevo si es que no era esta.
+*******************************/
+
+
 
 int getpos(int pos, unsigned long long int permsubi,int k, unsigned long long int alv){
     if(k < alv)
@@ -47,7 +86,17 @@ int getpos(int pos, unsigned long long int permsubi,int k, unsigned long long in
 };
 
 
-
+/*******************************
+Nombre funcion F
+********************************
+Descripcion:Busca la palabra desencriptada ocupando backtracking
+********************************
+entrada:
+*  C: palabra a desencriptar
+*  k: permutacion que se busca
+******
+salida: string nuevo (M), desencripatacion de C
+*******************************/
 
 
 char *F (char *C,int k){
