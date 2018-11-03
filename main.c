@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]){
         k = argv[i];    //LLave, que contiene la permutacion que se busca
 
         if(strlen(C)>20){
-            printf("Error: String ingresado no debe tener mas de 20 caracteres\n");
+            printf("Error: String ingresado no debe tener mas de 20 caracteres\n"); //Esto debido a que nuestro factorial solo soporta hasta 20!
             continue;
         }
 
