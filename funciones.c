@@ -71,9 +71,7 @@ char *F (char *C,int k){
 
         alv = alv  + (pos-1) * permsubi;
 
-        //Cambiar j por pos 
-        //alvaux por alv
-
+        
         perm /= i;
 
     }
